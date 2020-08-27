@@ -144,9 +144,9 @@ const ScrollableTabView = createReactClass({
       }
     } else {
        const offset = pageNumber * this.state.containerWidth;
-    if (this.scrollView) {
-      this.scrollView.scrollTo({x: offset, y: 0, animated: !this.props.scrollWithoutAnimation, });
-    }
+      if (this.scrollView) {
+        this.scrollView.scrollTo({x: offset, y: 0, animated: !this.props.scrollWithoutAnimation, });
+      }
     }
 
     const currentPage = this.state.currentPage;
@@ -251,53 +251,28 @@ const ScrollableTabView = createReactClass({
     } else {
       const scenes = this._composeScenes();
       return <ScrollView
-      horizontal
-      pagingEnabled
-      automaticallyAdjustContentInsets={false}
-      contentOffset={{ x: this.props.initialPage * this.state.containerWidth, }}
-      ref={(scrollView) => { this.scrollView = scrollView; }}
-      onScroll={(e) => {
-        const offsetX = e.nativeEvent.contentOffset.x;
-        this._updateScrollValue(offsetX / this.state.containerWidth);
-      }}
-      onMomentumScrollBegin={this._onMomentumScrollBeginAndEnd}
-      onMomentumScrollEnd={this._onMomentumScrollBeginAndEnd}
-      scrollEventThrottle={16}
-      scrollsToTop={false}
-      showsHorizontalScrollIndicator={false}
-      scrollEnabled={!this.props.locked}
-      directionalLockEnabled
-      alwaysBounceVertical={false}
-      keyboardDismissMode="on-drag"
-      {...this.props.contentProps}
-    >
-      {scenes}
-    </ScrollView>
-      // const scenes = this._composeScenes();
-      // return <AnimatedViewPagerAndroid
-      //   key={this._children().length}
-      //   style={styles.scrollableContentAndroid}
-      //   initialPage={this.props.initialPage}
-      //   onPageSelected={this._updateSelectedPage}
-      //   keyboardDismissMode="on-drag"
-      //   scrollEnabled={!this.props.locked}
-      //   onPageScroll={Animated.event(
-      //     [{
-      //       nativeEvent: {
-      //         position: this.state.positionAndroid,
-      //         offset: this.state.offsetAndroid,
-      //       },
-      //     }, ],
-      //     {
-      //       useNativeDriver: true,
-      //       listener: this._onScroll,
-      //     },
-      //   )}
-      //   ref={(scrollView) => { this.scrollView = scrollView; }}
-      //   {...this.props.contentProps}
-      // >
-      //   {scenes}
-      // </AnimatedViewPagerAndroid>;
+        horizontal
+        pagingEnabled
+        automaticallyAdjustContentInsets={false}
+        contentOffset={{ x: this.props.initialPage * this.state.containerWidth, }}
+        ref={(scrollView) => { this.scrollView = scrollView; }}
+        onScroll={(e) => {
+          const offsetX = e.nativeEvent.contentOffset.x;
+          this._updateScrollValue(offsetX / this.state.containerWidth);
+        }}
+        onMomentumScrollBegin={this._onMomentumScrollBeginAndEnd}
+        onMomentumScrollEnd={this._onMomentumScrollBeginAndEnd}
+        scrollEventThrottle={16}
+        scrollsToTop={false}
+        showsHorizontalScrollIndicator={false}
+        scrollEnabled={!this.props.locked}
+        directionalLockEnabled
+        alwaysBounceVertical={false}
+        keyboardDismissMode="on-drag"
+        {...this.props.contentProps}
+      >
+        {scenes}
+      </ScrollView>
     }
   },
 

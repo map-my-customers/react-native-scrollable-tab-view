@@ -102,16 +102,15 @@ const ScrollableTabView = createReactClass({
         offsetAndroidValue = value;
         callListeners(positionAndroidValue + offsetAndroidValue);
       });
+      scrollValue = new Animated.Value(this.props.initialPage)
     }
 
     return {
       currentPage: this.props.initialPage,
-      scrollValue,
       scrollXIOS,
       positionAndroid,
       offsetAndroid,
-      containerWidth,
-      scrollValue: new Animated.Value(this.props.initialPage),
+      scrollValue,
       containerWidth: Dimensions.get('window').width,
       sceneKeys: this.newSceneKeys({ currentPage: this.props.initialPage, }),
     };

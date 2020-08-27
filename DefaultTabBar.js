@@ -63,7 +63,7 @@ const DefaultTabBar = createReactClass({
       position: 'absolute',
       width: containerWidth / numberOfTabs,
       height: 4,
-      backgroundColor: 'white',
+      backgroundColor: 'navy',
       bottom: 0,
     };
 
@@ -86,7 +86,7 @@ const DefaultTabBar = createReactClass({
                 { translateX },
               ]
             },
-            this.props.tabBarUnderlineStyle,
+            this.props.underlineStyle,
           ]}
         />
       </View>

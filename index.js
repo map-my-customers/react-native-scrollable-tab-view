@@ -1,6 +1,5 @@
 const React = require('react');
 const { Component } = React;
-const { ViewPropTypes } = ReactNative = require('react-native');
 const createReactClass = require('create-react-class');
 const PropTypes = require('prop-types');
 const {
@@ -11,7 +10,8 @@ const {
   Platform,
   StyleSheet,
   InteractionManager,
-} = ReactNative;
+  ViewStyle
+} = require('react-native');
 
 const ViewPagerAndroid = require('@react-native-community/viewpager');
 const TimerMixin = require('react-timer-mixin');
@@ -46,7 +46,7 @@ const ScrollableTabView = createReactClass({
     tabBarActiveTextColor: PropTypes.string,
     tabBarInactiveTextColor: PropTypes.string,
     tabBarTextStyle: PropTypes.object,
-    style: ViewPropTypes.style,
+    style: ViewStyle,
     contentProps: PropTypes.object,
     scrollWithoutAnimation: PropTypes.bool,
     locked: PropTypes.bool,

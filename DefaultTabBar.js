@@ -21,7 +21,7 @@ const DefaultTabBar = createReactClass({
     textStyle: PropTypes.func,
     tabStyle: PropTypes.func,
     renderTab: PropTypes.func,
-    underlineStyle: ViewStyle,
+    underlineStyle: PropTypes.func,
   },
 
   getDefaultProps() {
